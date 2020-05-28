@@ -26,9 +26,13 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Routes Definitions
  */
 
+app.use('/user', (req, res)=>{
+    res.render('user', {title: 'Profile', userProfile: {nickname: 'Auth0'}});
+});
+
 app.use('/', (req,res)=>{
     res.render('index', {title: 'Home'});
-})
+});
 
 /**
  * Server Activation
